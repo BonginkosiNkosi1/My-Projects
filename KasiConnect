@@ -1,0 +1,109 @@
+// KasiConnect.java
+// Console-based Java application to connect township youth with job listings
+
+import java.util.*;
+
+public class KasiConnect {
+
+    static class Job {
+        String title;
+        String company;
+        String location;
+        String type; // e.g., Full-Time, Part-Time
+        String description;
+
+        public Job(String title, String company, String location, String type, String description) {
+            this.title = title;
+            this.company = company;
+            this.location = location;
+            this.type = type;
+            this.description = description;
+        }
+
+        @Override
+        public String toString() {
+            return "Job Title: " + title + "\nCompany: " + company + "\nLocation: " + location + "\nType: " + type + "\nDescription: " + description;
+        }
+    }
+
+    static List<Job> jobList = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int choice;
+        do {
+            System.out.println("\n=== KasiConnect Job Portal ===");
+            System.out.println("1. Add a Job Posting");
+            System.out.println("2. View All Jobs");
+            System.out.println("3. Search Jobs by Keyword");
+            System.out.println("4. Filter Jobs by Location");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine(); // consume newline
+
+            switch (choice) {
+                case 1 -> addJob();
+                case 2 -> viewJobs();
+                case 3 -> searchJobs();
+                case 4 -> filterJobsByLocation();
+                case 5 -> System.out.println("Thank you for using KasiConnect.");
+                default -> System.out.println("Invalid choice. Try again.");
+            }
+
+        } while (choice != 5);
+    }
+
+    static void addJob() {
+        System.out.print("Enter Job Title: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter Company Name: ");
+        String company = scanner.nextLine();
+        System.out.print("Enter Location: ");
+        String location = scanner.nextLine();
+        System.out.print("Enter Job Type (Full-Time/Part-Time): ");
+        String type = scanner.nextLine();
+        System.out.print("Enter Job Description: ");
+        String description = scanner.nextLine();
+
+        Job job = new Job(title, company, location, type, description);
+        jobList.add(job);
+        System.out.println("Job added successfully!");
+    }
+
+    static void viewJobs() {
+        if (jobList.isEmpty()) {
+            System.out.println("No jobs available.");
+            return;
+        }
+        for (Job job : jobList) {
+            System.out.println("\n" + job);
+        }
+    }
+
+    static void searchJobs() {
+        System.out.print("Enter keyword to search: ");
+        String keyword = scanner.nextLine().toLowerCase();
+        boolean found = false;
+        for (Job job : jobList) {
+            if (job.title.toLowerCase().contains(keyword) || job.description.toLowerCase().contains(keyword)) {
+                System.out.println("\n" + job);
+                found = true;
+            }
+        }
+        if (!found) System.out.println("No matching jobs found.");
+    }
+
+    static void filterJobsByLocation() {
+        System.out.print("Enter location to filter by: ");
+        String loc = scanner.nextLine().toLowerCase();
+        boolean found = false;
+        for (Job job : jobList) {
+            if (job.location.toLowerCase().equals(loc)) {
+                System.out.println("\n" + job);
+                found = true;
+            }
+        }
+        if (!found) System.out.println("No jobs found in that location.");
+    }
+}
