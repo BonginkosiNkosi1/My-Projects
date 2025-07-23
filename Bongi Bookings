@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bongi Bookings</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    header {
+      background: #1e88e5;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #1565c0;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 1rem;
+    }
+    input, select, button {
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #e3f2fd;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bongi Bookings</h1>
+    <p>Your trusted partner for easy online reservations</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h2>Book Your Appointment</h2>
+    <form id="bookingForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="date">Booking Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="service">Select Service:</label>
+      <select id="service" required>
+        <option value="">--Choose--</option>
+        <option value="consultation">Consultation</option>
+        <option value="appointment">Appointment</option>
+        <option value="followup">Follow-up</option>
+      </select>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bongi Bookings. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const service = document.getElementById("service").value;
+      alert(`Thank you, ${name}. Your ${service} booking has been submitted.`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
