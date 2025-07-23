@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KasiConnect - Empowering Township Talent</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    main {
+      padding: 2em;
+    }
+    h2 {
+      color: #444;
+    }
+    .job-listing {
+      background: #fff;
+      padding: 1em;
+      margin-bottom: 1em;
+      border-left: 5px solid #4CAF50;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KasiConnect</h1>
+    <p>Connecting local talent with local opportunity</p>
+  </header>
+
+  <main>
+    <h2>Available Jobs</h2>
+    <div class="job-listing">
+      <h3>Retail Assistant - Spaza Shop</h3>
+      <p><strong>Location:</strong> Khayelitsha</p>
+      <p><strong>Type:</strong> Part-time</p>
+      <p><strong>Description:</strong> Help with daily store operations, manage shelves and attend to customers.</p>
+    </div>
+
+    <div class="job-listing">
+      <h3>Mobile Car Wash Attendant</h3>
+      <p><strong>Location:</strong> Soweto</p>
+      <p><strong>Type:</strong> Freelance</p>
+      <p><strong>Description:</strong> Travel to client locations, wash and detail cars, no experience needed.</p>
+    </div>
+
+    <div class="job-listing">
+      <h3>Admin Assistant - Community NGO</h3>
+      <p><strong>Location:</strong> Alexandra</p>
+      <p><strong>Type:</strong> Internship</p>
+      <p><strong>Description:</strong> Assist with paperwork, phone calls, and event coordination.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KasiConnect. All rights reserved.</p>
+  </footer>
+</body>
+</html>
